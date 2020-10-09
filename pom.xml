@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
-    <artifactId>ElasticSearch</artifactId>
+    <artifactId>ElasticSearchAPI</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ElasticSearch</name>
+    <name>ElasticSearchApi</name>
     <description>Demo project for Spring Boot</description>
     <parent>
         <groupId>org.springframework.boot</groupId>
