@@ -106,6 +106,7 @@ class ElaApplicationTests {
         IndexRequest indexRequest = new IndexRequest("nob");
         //规则：put /xxx/_doc/1
         indexRequest.id("1");
+        //设置超时
         indexRequest.timeout(TimeValue.timeValueSeconds(1));
         //放入数据，Json
         indexRequest.source(JSON.toJSONString(user), XContentType.JSON);
@@ -113,7 +114,6 @@ class ElaApplicationTests {
         IndexResponse index = restHighLevelClient.index(indexRequest, RequestOptions.DEFAULT);
         System.out.println(index.toString());
         System.out.println(index.status());
-
     }
 
     //判断文档是否存在
@@ -137,8 +137,6 @@ class ElaApplicationTests {
             System.out.println(documentFields.getSourceAsString());
             System.out.println(documentFields);
         }
-
-
     }
 
     //更新文档
@@ -177,12 +175,9 @@ class ElaApplicationTests {
                             .id("" + (i + 1))
                             .source(JSON.toJSONString(userList.get(i)), XContentType.JSON)
             );
-
         }
-
         BulkResponse bulk = restHighLevelClient.bulk(bulkRequest, RequestOptions.DEFAULT);
         System.out.println(bulk.hasFailures()); //false  成功
-
     }
 
 
@@ -206,7 +201,6 @@ class ElaApplicationTests {
         for (SearchHit document : searchResponse.getHits().getHits()) {
             System.out.println(document.getSourceAsMap());
         }
-
     }
 
 

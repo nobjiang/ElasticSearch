@@ -17,7 +17,7 @@ public class ElaticSearchClientConfig {
     @Bean
     public RestHighLevelClient restHighLevelClient(){
         RestHighLevelClient client=new RestHighLevelClient(
-                RestClient.builder(new HttpHost("192.168.56.181",9200,"http"))
+                RestClient.builder(new HttpHost("192.168.56.181",9200,"http"),new HttpHost("192.168.56.182",9200,"http"))
         );
         return client;
     }

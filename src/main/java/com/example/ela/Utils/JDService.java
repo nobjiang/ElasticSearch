@@ -135,7 +135,6 @@ public class JDService {
             list.add(sourceAsMap);
         }
         return list;
-
     }
 
 
